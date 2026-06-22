@@ -26,6 +26,7 @@ from .patterns import apipatterns, schemapatterns
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(apipatterns)),
+    path("api-auth/", include("rest_framework.urls")),
     path("docs/", include(schemapatterns)),
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
     re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),

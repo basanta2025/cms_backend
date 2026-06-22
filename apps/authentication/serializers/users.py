@@ -305,7 +305,6 @@ class UserSignUpSerializer(BaseModelSerializer):
 
         user = CustomUser(**validated_data)
         user.set_password(password)
-        user.user_type = "public"
         user.is_active = True
         user.save()
 
