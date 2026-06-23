@@ -1,0 +1,14 @@
+DEBUG=True
+SECRET_KEY=django-insecure-7ere@p2d1&^31m!g#3hcypg1+=mfgizny=m59tmr9i&q0h=e--
+
+# Local database configuration 
+DB_USER=admin
+DB_PASSWORD=admin123
+DB_HOST=db
+DB_NAME=cms_db
+DB_PORT=5432
+
+CORS_ALLOW_ALL_ORIGINS=True
+DECIMAL_PLACES=4
+MAX_DIGITS=12
+MAX_DECIMAL_DIGITS=16
