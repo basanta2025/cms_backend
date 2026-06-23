@@ -281,9 +281,9 @@ class UserSignUpSerializer(BaseModelSerializer):
             "middle_name",
             "last_name",
             "gender",
-            "birth_date",
+            # "birth_date",
             "mobile_no",
-            "photo",
+            # "photo",
         ]
 
     def validate(self, data):
