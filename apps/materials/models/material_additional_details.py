@@ -192,7 +192,7 @@ class MaterialAdditionalDetails(AbstractBaseModel):
         help_text="Material Shape Id",
         related_name="material_additional_details_shape",
     )
-    company_name = models.ForeignKey(
+    company = models.ForeignKey(
         "materials.MaterialCompany",
         on_delete=models.PROTECT,
         null=True,

@@ -1,8 +1,9 @@
+from rest_framework.exceptions import PermissionDenied
+from rest_framework.permissions import IsAuthenticated
+
 from apps.authentication.utils import (  # This import is used everywhere even though they might not be used here,these modules are imported via this FILE so let it be
     HttpBasedPermissionActionMaps,
 )
-from rest_framework.exceptions import PermissionDenied
-from rest_framework.permissions import IsAuthenticated
 
 
 class CustomIsAuthenticatedPermission(IsAuthenticated):
