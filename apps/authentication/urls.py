@@ -33,7 +33,7 @@ user_patterns = [
     path("create", UserCreateView.as_view(), name="user-create"),
     path("<int:pk>", UserRetrieveView.as_view(), name="user-retrieve"),
     path("<int:pk>/update", UserUpdateView.as_view(), name="user-update"),
-    path("<int:pk>/delete", UserDeleteView.as_view(), name="user-delete"),
+    # path("<int:pk>/delete", UserDeleteView.as_view(), name="user-delete"),
 ]
 permissions_patterns = [
     path(

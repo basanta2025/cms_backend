@@ -11,13 +11,34 @@ class AttendanceStatus(models.TextChoices):
 
 class AttendanceLog(AbstractBaseModel):
     worker = models.ForeignKey(
-        "manpower.Worker", on_delete=models.CASCADE, related_name="worker_attendance"
+        "manpower.Worker",
+        on_delete=models.CASCADE,
+        related_name="worker_attendance",
+        null=True,
+        blank=True,
     )
     marked_by = models.ForeignKey(
         "authentication.CustomUser",
         on_delete=models.SET_NULL,
         null=True,
         related_name="marked_attendances",
+    )
+    vendor = models.ForeignKey(
+        "vendor.Vendor",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="vendor_attendance",
+    )
+    group_of_worker = models.BooleanField(
+        default=False,
+        help_text="Indicates if this attendance log is for a group of workers (True)",
+    )
+    total_workers = models.PositiveIntegerField(
+        default=1,
+        null=True,
+        blank=True,
+        help_text="Total number of workers present. Only applicable when group_of_worker is True.",
     )
     work_date = models.DateField()
     status = models.CharField(

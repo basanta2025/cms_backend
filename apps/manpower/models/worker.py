@@ -14,6 +14,14 @@ class WorkerCategory(AbstractBaseModel):
 
 
 class Worker(AbstractBaseModel):
+    vendor = models.ForeignKey(
+        "vendor.Vendor",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        related_name="workers",
+        help_text="The vendor this worker belongs to. Null if independent worker.",
+    )
     name = models.CharField(max_length=150)
     category = models.ForeignKey(
         WorkerCategory,

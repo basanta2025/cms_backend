@@ -65,6 +65,9 @@ LOCAL_APPS = [
     "apps.projects",
     "apps.materials",
     "apps.manpower",
+    "apps.vendor",
+    "apps.accounting",
+    "apps.purchase",
 ]
 INSTALLED_APPS = [
     "django.contrib.admin",

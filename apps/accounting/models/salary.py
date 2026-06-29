@@ -15,11 +15,12 @@ class SalarySheet(AbstractBaseModel):
     worker = models.ForeignKey(
         "manpower.Worker", on_delete=models.CASCADE, related_name="worker_salary_sheets"
     )
-    project = models.ForeignKey(
-        "projects.Project",
-        on_delete=models.CASCADE,
-        related_name="project_salary_sheets",
-    )
+    # project = models.ForeignKey(
+    #     "projects.Project",
+
+    #     on_delete=models.CASCADE,
+    #     related_name="project_salary_sheets",
+    # )
     generated_by = models.ForeignKey(
         "authentication.CustomUser",
         on_delete=models.SET_NULL,
